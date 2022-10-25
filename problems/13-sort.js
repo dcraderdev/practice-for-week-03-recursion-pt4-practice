@@ -22,8 +22,24 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-    // Your code here
-}
+    if (nums.length < 1) {
+      return sorted;
+    }
+  
+    let small = Math.min(...nums)
+    let smallIndex = nums.indexOf(small)
+  
+    // console.log('nums', nums);
+    // console.log('small', small);
+    // console.log('smallIndex', smallIndex);
+    // console.log('sorted step', sorted);
+    nums.splice(smallIndex, 1)
+    sorted.push(small)
+    // nums.splice(smallIndex, 1)
+  
+    return sort(nums, sorted)
+      // return sorted.push(nums[0]) && sort(nums, sorted);
+    }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = sort;

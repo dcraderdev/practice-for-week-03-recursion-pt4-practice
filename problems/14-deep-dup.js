@@ -33,9 +33,9 @@ let y = x.slice();
 console.log(x[0] === y[0]) // true
 ***********************************************************************/
 
-
 function deepDup(arr) {
-  // Your code here
+  let arrDupe = arr.slice(arr[0])
+  return arrDupe
 }
 
 
